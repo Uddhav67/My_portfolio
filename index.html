@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal portfolio website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b43ae40620.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Web Developer</p>
+                <h1>Hi, I am<br><span>Uddhav</span></h1>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/MyImage.jpeg" >
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub">About Me</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>HTML</span></li>
+                            <li><span>CSS</span></li>
+                            <li><span>Bootstrap</span></li>
+                            <li><span>javascript</span></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2017</span><br>SSC from SRVM high school</li>
+                            <li><span>2019</span><br>hSC from SRVM high school</li>
+                            <li><span>2023</span><br>B.Tech from Shivaji University</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub">My work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="images/dog.jpg" >
+                    <div class="layer">
+                        <h3>social media App</h3>
+                        <p>This app connects your dog to other dogs around the world.</p>
+                        <a href="https://uddhav67.github.io/bootstrap_project/"><i class="fa-solid fa-link"></i></a>
+                    </div>
+
+                </div>
+                <div class="work">
+                    <img src="images/word.png" >
+                    <div class="layer">
+                        <h3>Word editor</h3>
+                        <p>This site all about editing word. Like changing font, color. </p>
+                        <a href="https://uddhav67.github.io/word-editor/"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="images/dicee.jpg" >
+                    <div class="layer">
+                        <h3>Dice game</h3>
+                        <p>A fun game to play with your friends.</p>
+                        <a href=" https://uddhav67.github.io/dicee_game/"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i>uddhavsonawnae666@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>7030013278</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/uddhav-sonawane-5856231a3?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BMbJqb0BnQde6xUx%2FVlgEvw%3D%3D"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/Uddhav67"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="images/MyCV.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form>
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<script>
+
+     var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+
+</script>
+    
+</body>
+</html>
